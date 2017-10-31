@@ -3,7 +3,7 @@ pragma solidity ^0.4.2;
 contract storenumber{
     uint number;
     function storenumber() public{
-        number=100;
+        number=200;
     }
     
     function increment() public{
@@ -11,7 +11,7 @@ contract storenumber{
     }
     
     function decrement() public{
-        number =number -1;
+        number = number -1;
     }
     
     function fetch() public constant returns(uint) {
@@ -19,6 +19,6 @@ contract storenumber{
     }
     
     function setnumber(uint thenewvalue) public{
-        number=thenewvalue;
+        number = thenewvalue;
     }
 }
