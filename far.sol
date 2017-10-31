@@ -1,16 +1,16 @@
 pragma solidity ^0.4.2;
 
-contract storenumber{
+contract exp{
     uint number;
-    function storenumber() public{
+    function storeno() public{
         number=200;
     }
     
-    function increment() public{
+    function inc() public{
     number = number +1 ;   
     }
     
-    function decrement() public{
+    function dec() public{
         number = number -1;
     }
     
@@ -18,7 +18,7 @@ contract storenumber{
         return number;
     }
     
-    function setnumber(uint thenewvalue) public{
-        number = thenewvalue;
+    function setnumber(uint newvalue) public{
+        number = newvalue;
     }
 }
