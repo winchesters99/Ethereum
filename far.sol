@@ -2,7 +2,7 @@ pragma solidity ^0.4.2;
 
 contract exp{
     uint number;
-    function storeno() public{
+    function storenumber() public{
         number=200;
     }
     
