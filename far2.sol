@@ -1,29 +1,29 @@
 pragma solidity ^0.4.0;
-contract ArrayRR {
+contract Array{
 
     address creator;
     uint8 arraylength = 10;
-    uint8[10] integers; // NOTE 1 see below
-    int8 setarraysuccessful = -1; // 1 success, 0 fail, -1 not yet tried
+    uint8[10] integers; 
+    int8 setarraysuccessful = -1; 
 
-    function ArrayRR() public
+    function Array() public
     {
         creator = msg.sender;
         uint8 x = 0;
         while(x < integers.length)
         {
-        	integers[x] = 1; // initialize array to all zeros
+        	integers[x] = 1; 
         	x++;
         }
     }
     
-    function setArray(uint8[10] incoming) public  // NOTE 2 see below. Also, use enough gas.
+    function setArray(uint8[10] incoming) public  
     {
     	setarraysuccessful = 0;
     	uint8 x = 0;
         while(x < arraylength)
         {
-        	integers[x] = incoming[x]; // initialize array to all zeros
+        	integers[x] = incoming[x]; 
         	x++;
         }
         setarraysuccessful = 1;
@@ -35,7 +35,7 @@ contract ArrayRR {
     	return setarraysuccessful;
     }
     
-    function getArray() public constant returns (uint8[10])  // NOTE 3 see below
+    function getArray() public constant returns (uint8[10])  
     {
     	return integers;
     }
@@ -45,15 +45,11 @@ contract ArrayRR {
     	return integers[x];
     }
     
-    /**********
-     Standard kill() function to recover funds 
-     **********/
-    
     function kill() public
     { 
         if (msg.sender == creator)
         {
-            suicide(creator);  // kills this contract and sends remaining funds back to creator
+            suicide(creator);  
         }
     }
 }
